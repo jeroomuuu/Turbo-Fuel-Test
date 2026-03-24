@@ -51,8 +51,13 @@ settings.source = openmc.IndependentSource(space=uniform_dist)
 # --- MODEL ---
 model = openmc.Model(geometry=geometry, materials=materials, settings=settings)
 
+# --- DOWNLOAD THE SAME NUCLEAR DATA FILE AND SET THE ENV TO THE XML FILE ---
+# --- export OPENMC_CROSS_SECTIONS="/PATH_TO/chain_endfb/cross_sections.xml"
+# --- set that in your bash script at the bottom and reload with source ~/.bashrc
+
 # --- DEPLETION CHAIN FILE ---
-chain_file = "/PATH_TO/chain_endfb71_thermal.xml"
+# --- YOU CAN DOWNLOAD THE DEPLETION CHAIN FILES HERE: https://openmc.org/data/ ---
+chain_file = "/PATH_TO/chain_endfb/xx_thermal-or-and-fast.xml"
 
 # --- COUPLED OPERATOR ---
 operator = openmc.deplete.CoupledOperator(
