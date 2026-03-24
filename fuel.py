@@ -3,6 +3,11 @@ import openmc.deplete
 import numpy as np
 import math
 
+# dont forget to download and extract the endf file and point to the right location
+# export OPENMC_CROSS_SECTIONS=/path-to-file/cross_sections.xml
+# echo 'export OPENMC_CROSS_SECTIONS="/path-to-file/cross_sections.xml"' >> ~/.bashrc
+# source ~./bashrc
+
 # --- MATERIALS ---
 fuel = openmc.Material(name="UO2 Fuel")
 fuel.set_density('g/cm3', 10.5)
